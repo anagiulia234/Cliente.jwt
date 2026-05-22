@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Clientes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Cadastro de Clientes</h1>
+    <p>Gerencie os clientes após efetuar login.</p>
+  </header>
+
+  <main>
+    <section class="panel header-actions">
+      <div>
+        <button id="logoutButton" class="secondary">Sair</button>
+      </div>
+      <div id="message" class="message"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Buscar Clientes</h2>
+      <div class="form-row">
+        <input id="searchInput" type="text" placeholder="Buscar por nome..." />
+        <button id="searchButton">Buscar</button>
+        <button id="refreshButton">Listar todos</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Lista de Clientes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="clientTable"></tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>Adicionar / Atualizar Cliente</h2>
+      <form id="clientForm">
+        <input type="hidden" id="clientId" />
+
+        <div class="form-row">
+          <label for="nome">Nome</label>
+          <input id="nome" type="text" required />
+        </div>
+
+        <div class="form-row">
+          <label for="cpf">CPF</label>
+          <input id="cpf" type="text" required />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" type="email" required />
+        </div>
+
+        <div class="form-row">
+          <label for="telefone">Telefone</label>
+          <input id="telefone" type="text" required />
+        </div>
+
+        <div class="button-row">
+          <button type="submit">Salvar</button>
+          <button type="button" id="clearButton" class="secondary">Limpar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="cadastro.js"></script>
+</body>
+</html>
